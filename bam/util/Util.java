@@ -3,14 +3,12 @@ package bam.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Util {
+	public class Util {
+		public static String getDateStr() {
+			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-	public static String getNowDateStr() {
-		
-		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-      
-        Date now = new Date();
-        
-        return sdf1.format(now);
+			Date now = new Date();
+
+			return sdf1.format(now);
+		}
 	}
-}
