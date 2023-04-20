@@ -50,6 +50,7 @@ public class App {
 			
 			Controller controller = null;
 			
+			
 			if(controllerName.equals("article")) {
 				controller = articleController;
 			} else if (controllerName.equals("member")) {
@@ -57,6 +58,25 @@ public class App {
 			} else {
 				System.out.println("존재하지 않는 명령어 입니다");
 				continue;
+			}
+			
+			switch(methodName) {
+			case "logout":
+			case "write":	
+			case "modify":
+			case "delete":
+				if (Controller.loginedMember == null) {
+					System.out.println("로그인 상태가 아닙니다");
+					continue;
+				}
+				break;
+			case "join":
+			case "login":
+				if (Controller.loginedMember != null) {
+					System.out.println("로그아웃 후 이용해주세요");
+					continue;
+				}
+				break;
 			}
 			
 			controller.doAction(cmd, methodName);
