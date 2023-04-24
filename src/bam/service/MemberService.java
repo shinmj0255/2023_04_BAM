@@ -31,5 +31,9 @@ public class MemberService {
 	public void makeTestData() {
 		memberDao.makeTestData();
 	}
+
+	public String getWriterName(int memberId) {
+		return memberDao.getWriterName(memberId);
+	}
 	
 }

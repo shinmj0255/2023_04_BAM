@@ -26,6 +26,16 @@ public class MemberDao extends Dao {
 		}
 		return null;
 	}
+	
+	public String getWriterName(int memberId) {
+		
+		for (Member member : members) {
+			if (memberId == member.id) {
+				return member.name;
+			}
+		}
+		return null;
+	}
 
 	public boolean isLoginIdDup(String loginId) {
 		Member member = getMemberByLoginId(loginId);
